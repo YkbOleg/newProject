@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{titleIndex}">Sort photos</title>
+    <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/photoSorting.js"></script>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css"/>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css"/>
+</head>
+
+<body>
+    <div>
+        <div th:class="divSort">
+            <label for="catalogStart" th:text="#{locationPhStart}">Specify the location of the photos:</label>
+            <input id="catalogStart" type="text" name="catalogStart"/>
+        </div>
+
+        <div th:class="divSort">
+            <label for="catalogFinish" th:text="#{locationPhFinish}">Specify the sort destination directory:</label>
+            <input id="catalogFinish" type="text" name="catalogFinish"/>
+        </div>
+
+        <div>
+            <button id="photoSorting" th:text="#{runSort}">Execute sort</button>
+        </div>
+
+        <div>
+            <span id="result">
+                Сортировка не выполнялась
+            </span>
+        </div>
+        <div>
+            <li><a th:href="@{/}" th:text="#{returnIndexPage}">Return to the homepage</a></li>
+        </div>
+        <div th:class="divSelect">
+            <form th:action="@{tableView}" method="get">
+                <select th:action="@{photoSorting}" name="year">
+                    <option value="" th:text="#{viewAll}">view all</option>
+                    <option th:each="year : ${findYears}"
+                            th:value="${year.toString()}"
+                            th:text="${year.toString()}">
+                    </option>
+                </select>
+                <button type="submit" th:text="#{viewDB}">View photo database</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

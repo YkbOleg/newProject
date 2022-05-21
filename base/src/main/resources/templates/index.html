@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="#{titleIndex}">Photo 📷 manager</title>
+    <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css"/>
+</head>
+
+<body>
+    <h1 th:text="#{titleIndex}">Photo 📷 manager</h1>
+    <menu>
+        <ul>
+            <li><a th:href="@{photoSorting}" th:text="#{PhSort}">Sort photos</a></li>
+        </ul>
+    </menu>
+
+    <span th:text="#{lang.change}"></span>:
+    <select id="locales">
+        <option value=""></option>
+        <option value="en" th:text="#{lang.eng}">eng</option>
+        <option value="ru" th:text="#{lang.ru}">ru</option>
+    </select>
+
+</body>
+
+</html>

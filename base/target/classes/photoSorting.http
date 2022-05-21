@@ -1,0 +1,4 @@
+//POST http://localhost:8080/sorting?catalogStart=C:\TestJavaFiles\photoSorted\Start&catalogFinish=C:\TestJavaFiles\photoSorted\Finish
+//POST http://localhost:8080/tableView?userId=90&action=delete
+GET http://localhost:8080/tableView?year=2015
+//GET http://localhost:8080/findYear?year=2016

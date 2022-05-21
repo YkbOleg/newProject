@@ -1,0 +1,47 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Yakubovskiy Oleg" id="26_04_22_CreateTableRole">
+        <preConditions>
+            <not>
+                <tableExists tableName="ROLE"/>
+            </not>
+        </preConditions>
+        <createTable tableName="ROLE">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Yakubovskiy Oleg" id="26_04_2022_CreateTableUser">
+        <preConditions>
+            <not>
+                <tableExists tableName="USER"/>
+            </not>
+        </preConditions>
+        <createTable tableName="USER">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="LOGIN" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="PASSWORD" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="STATUS" type="INT(1)" defaultValue="1">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ROLE_ID" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="FK_USER_ROLE" references="ROLE(ID)"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

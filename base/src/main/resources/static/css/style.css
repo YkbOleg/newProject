@@ -1,0 +1,57 @@
+.divSort{
+    margin: 2px 2px 2px 2px;
+}
+
+table {
+    width:100%;
+    background-color: #bce79f;
+    color:black;
+}
+tr:nth-child(2n) {
+    background-color: #9bba7f;
+}
+
+.divSelect{
+    margin: 5px 2px 2px 2px;
+}
+
+/*#labelText {*/
+/*    float: left;*/
+/*}*/
+
+/*.body {*/
+/*    margin: 0px 0px 0px 0px;*/
+/*    margin-bottom: 2px;*/
+/*}*/
+
+/*body {*/
+/*    color: black;*/
+/*}*/
+
+/*.holder {*/
+/*    height: 100px;*/
+/*    width: 200px;*/
+/*    background: red;*/
+/*}*/
+
+/*#labelText:read-only {*/
+/*    float: left;*/
+/*}*/
+
+/*#errorLabel {*/
+/*    display: none;*/
+/*}*/
+
+/*.loginPanel {*/
+/*    position: absolute;*/
+/*    right: 5px;*/
+/*}*/
+
+/*.loginName {*/
+/*    padding-right: 5px;*/
+/*}*/
+
+/*.logoutButton {*/
+/*    float: right;*/
+/*    cursor: pointer;*/
+/*}*/
